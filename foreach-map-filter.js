@@ -209,23 +209,11 @@ Examples:
 */
 
 function findInObj(arr, key, searchValue) {
-    let result = arr.filter(elem => {
-        if(elem.hasOwnProperty(key)) return elem
-    })
-    
-    return result[0]
+    return arr.filter(elem => {
+        return elem[key] === searchValue
+    })[0]
 }
 
-console.log(findInObj(
-  [
-    {first: 'Elie', last:"Schoppik"},
-    {first: 'Tim', last:"Garcia", isCatOwner: true},
-    {first: 'att', last:"Lane"},
-    {first: 'Colt', last:"Steele", isCatOwner: true}
-  ],
-  'isCatOwner',
-  true
-))
 /*
 Write a function called removeVowels which accepts a string and returns a new string with all of the vowels (both uppercased and lowercased) removed. Every character in the new string should be lowercased.
 
